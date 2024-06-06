@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 )
 
 type Examples struct{}
@@ -20,7 +21,7 @@ func (m *Examples) Gptools(
 		openaiApiKey,
 		dag.Directory().
 			WithFile("nix-paper.pdf", nixPaper).
-			WithFile("image.png", foxImage),
+			WithFile(fmt.Sprintf("%v.png", "image"), foxImage),
 		question,
 	)
 }
